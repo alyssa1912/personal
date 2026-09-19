@@ -9,6 +9,7 @@ const errorMessage = document.getElementById("error-message");
 
 pins.forEach((pin, index) => {
 
+    // When a number is entered
     pin.addEventListener("input", () => {
 
         // Move to the next box
@@ -19,6 +20,24 @@ pins.forEach((pin, index) => {
         // Check PIN once all four numbers are entered
         if (index === pins.length - 1 && pin.value) {
             checkPin();
+        }
+
+    });
+
+
+    // Backspace functionality
+    pin.addEventListener("keydown", (event) => {
+
+        if (event.key === "Backspace") {
+
+            // If the current box is empty,
+            // move back to the previous box
+            if (!pin.value && index > 0) {
+
+                pins[index - 1].focus();
+                pins[index - 1].value = "";
+
+            }
         }
 
     });
@@ -55,6 +74,7 @@ function checkPin() {
             pin.value = "";
         });
 
+        // Return to the first box
         pins[0].focus();
     }
 }
