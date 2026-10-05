@@ -1,91 +1,513 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Salem Witch Trials — Alyssa Pramod</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- IMAGES: add style="--img:url('file.jpg')" to any image slot (.slot / .pan), or style="--bg:url('file.jpg')" to any section for a full-section background. -->
+    <!-- ===== BACKGROUND EMBERS CANVAS (animated in main.js) ===== -->
+    <canvas id="cv"></canvas>
+    <!-- ===== SIDE BAR (menu button, vertical text, progress) ===== -->
 
-    <title>My Story</title>
+    <div id="bar">
+      <button id="mb" aria-label="Menu"><i></i><i></i><i></i></button>
+      <div id="vt">The Salem Witch Trials · 1692</div>
+      <div id="pg"><b></b></div>
+    </div>
+    <!-- ===== CHAPTER LABEL (top right) ===== -->
 
-    <link rel="stylesheet" href="style.css">
+    <div id="chap"></div>
+    <!-- ===== FULL-SCREEN MENU (numbered 01-18) ===== -->
 
-</head>
+    <nav id="menu">
+      <div class="t">Salem Witch Trials</div>
+      <a href="#hero">Home</a><a href="#s1">01 Salem in 1690's</a><a href="#s2">02 What happened?</a>
+      <div class="h">The Beginning</div>
+      <a href="#s3">03 The first accusations</a><a href="#s4">04 Confessions & hysteria</a>
+      <div class="h">Factors</div>
+      <a href="#c2">05–09 Why did it happen?</a>
+      <div class="h">The Trials</div>
+      <a href="#c3">10 Accusations & executions</a><a href="#eu">11 Europe trials</a
+      ><a href="#mis">12–14 Common misconceptions</a>
+      <div class="h">The End</div>
+      <a href="#c4">15 The trials come to an end</a><a href="#s16">16 The aftermath & legacy</a
+      ><a href="#tlw">17 Timeline recap</a><a href="#src">18 Sources & credits</a>
+    </nav>
 
-<body>
+    <!-- ===== HERO — title, moon, skyline ===== -->
 
-    <!-- INTRO -->
-    <section class="intro">
-
-        <p class="small-text">AN INTERACTIVE STORY</p>
-
-        <h1>
-            The Story<br>
-            Begins Here
-        </h1>
-
-        <p class="scroll">↓ SCROLL TO EXPLORE</p>
-
+    <section id="hero" data-ch="">
+      <div id="moon"></div>
+      <svg id="tw" viewBox="0 0 900 260">
+        <path
+          d="M0 260V210l60-8 30-50 20 50 60-10V120l12-25 12 25v80l80-14 40-80 14-12 14 12 30 80 100 12V140l10-20 10 20v50l60 8 36-70 30 70 80-6V90l16-40 16 40v100l60 14 40-40 40 40 20 56z"
+        />
+      </svg>
+      <div id="by">BY ALYSSA PRAMOD<br />S4177012 · 2026</div>
+      <h1 id="ht"></h1>
+      <div id="sc">SCROLL ↓</div>
     </section>
 
+    <!-- ===== INTRODUCTION — text + image slot ===== -->
 
-    <!-- MAIN STORY -->
-    <section class="story">
-
-        <div class="story-content">
-
-            <!-- IMAGE -->
-            <div class="image-container">
-
-                <img
-                    src="images/image1.jpg"
-                    class="story-image"
-                    alt="Story image"
-                >
-
-            </div>
-
-
-            <!-- TEXT -->
-            <div class="story-text">
-
-                <p class="chapter">01 — THE BEGINNING</p>
-
-                <h2 class="story-title">
-                    It all started here.
-                </h2>
-
-                <p class="description">
-                    Every story has a beginning. 
-                    This is where our journey starts.
-                </p>
-
-            </div>
-
+    <section class="sec" id="intro">
+      <div class="wrap two">
+        <div>
+          <h3>Introduction</h3>
+          <p class="big" id="scrub">
+            The Salem Witch Trials are often remembered as a dramatic hunt for witches, superstition and mass
+            hysteria. But the story is far bigger than that. This is a journey through multiple perspectives,
+            historical evidence and theories, to see how gender, social power and religion shaped the
+            accusations, and to question how history is understood and remembered.
+          </p>
         </div>
-
+        <figure class="slot" style="min-height: 420px">
+          <span class="ph">IMAGE SLOT · INTRO<br />add style="--img:url('intro.jpg')"</span>
+        </figure>
+      </div>
     </section>
 
+    <!-- ===== CHAPTER 1 CARD — The Beginning ===== -->
 
-    <!-- END -->
-    <section class="ending">
-
-        <p>THE END</p>
-
-        <h2>
-            But every ending<br>
-            creates another beginning.
-        </h2>
-
+    <section class="card" id="ch1" data-ch="Chapter 1 of 4 · The Beginning">
+      <small>Chapter 1 of 4</small>
+      <div class="h">The Beginning</div>
+      <hr />
     </section>
 
+    <!-- ===== 01 SALEM IN 1690'S — town/village panels (image backgrounds) ===== -->
 
-    <!-- GSAP -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.0/dist/gsap.min.js"></script>
+    <section class="sec" id="s1" data-ch="Chapter 1 of 4 · The Beginning">
+      <div class="wrap">
+        <h3>01 · Salem in 1690's</h3>
+        <h2 class="rv">1692 Salem</h2>
+        <p class="rv d1">
+          Salem, Massachusetts, was a divided community. Religion was central to everyday life for the
+          Puritans: people strongly believed in God, Satan, sin and supernatural forces, within a strict
+          social hierarchy. Yet beneath the surface, tensions were already building over land, wealth and
+          authority.
+        </p>
+        <div class="split">
+          <div class="pan a">
+            <span class="ph">IMAGE BACKGROUND · TOWN<br />add style="--img:url('town.jpg')"</span>
+            <h4>Salem Town</h4>
+            <p>More developed, and home to wealthier merchant families.</p>
+          </div>
+          <div class="pan b">
+            <span class="ph">IMAGE BACKGROUND · VILLAGE<br />add style="--img:url('village.jpg')"</span>
+            <h4>Salem Village</h4>
+            <p>
+              Rural and agricultural. Life revolved around farming, work, religion and community, and people
+              depended heavily on their neighbours for farming, food and goods.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- ScrollTrigger -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.0/dist/ScrollTrigger.min.js"></script>
+    <!-- ===== 02 WHAT HAPPENED? ===== -->
 
-    <!-- Your JavaScript -->
-    <script src="script.js"></script>
+    <section class="sec" id="s2" data-ch="Chapter 1 of 4 · The Beginning">
+      <div class="wrap">
+        <h3>02 · What happened?</h3>
+        <h2 class="rv">January 1692</h2>
+        <p class="rv d1">
+          Something changed. Two young girls, Betty Parris, 9, and Abigail Williams, 11, began having
+          unexplained fits and unusual behaviour. They screamed, threw things, twisted their bodies and said
+          they were being tormented. With no ordinary explanation, a local doctor declared them under the
+          influence of evil forces, and a wave of fear and suspicion began to spread.
+        </p>
+      </div>
+    </section>
 
-</body>
+    <!-- ===== 03 THE FIRST ACCUSATIONS ===== -->
+
+    <section class="sec" id="s3" data-ch="Chapter 1 of 4 · The Beginning">
+      <div class="wrap">
+        <h3>03 · The first accusations</h3>
+        <h2 class="rv">Three Names</h2>
+        <p class="rv d1">
+          The girls were pushed to say who was responsible. They named three women who were already
+          vulnerable.
+        </p>
+        <div class="names">
+          <div class="nm rv d2"><b>Tituba</b><span>An enslaved woman</span></div>
+          <div class="nm rv d3"><b>Sarah Good</b><span>Very poor</span></div>
+          <div class="nm rv d4">
+            <b>Sarah Osborne</b><span>Older, with a bad reputation in the community</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 CONFESSIONS & HYSTERIA — image slots ===== -->
+
+    <section class="sec" id="s4" data-ch="Chapter 1 of 4 · The Beginning">
+      <div class="wrap two">
+        <div>
+          <h3>04 · Confessions & hysteria</h3>
+          <h2 class="rv">A Forced Confession</h2>
+          <p class="rv d1">
+            Tituba eventually confessed to practising witchcraft and claimed other witches were working with
+            the Devil. She had never practised witchcraft or harmed anyone. Her owner, Samuel Parris, father
+            of Betty and a Puritan minister, forced her to confess through severe physical abuse. She feared
+            she would be hanged if she denied it, and figured that confessing would stop the torture and keep
+            her alive in jail.
+          </p>
+          <p class="rv d2">Her confession set off more fear. The accusations spread.</p>
+        </div>
+        <div class="pile">
+          <figure class="slot"><span class="ph">IMAGE SLOT · CONFESSION 1</span></figure>
+          <figure class="slot"><span class="ph">IMAGE SLOT · CONFESSION 2</span></figure>
+          <svg class="star" viewBox="0 0 100 100">
+            <path d="M50 0L58 42 100 50 58 58 50 100 42 58 0 50 42 42Z" fill="#fff" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 2 CARD — Factors ===== -->
+
+    <section class="card" id="c2" data-ch="Chapter 2 of 4 · Factors">
+      <small>Chapter 2 of 4</small>
+      <div class="h">Factors: Why Did It Happen?</div>
+      <hr />
+    </section>
+
+    <!-- ===== 05-09 FACTORS — pinned scenes (scroll to change) ===== -->
+
+    <section class="steps" data-n="5" data-ch="Chapter 2 of 4 · Factors" style="height: 600vh">
+      <div class="stage">
+        <div class="st">
+          <span class="n">i</span>
+          <h3>05 · Factor 1 of 5</h3>
+          <h4>Religion & Fear</h4>
+          <p>
+            There is no single explanation. Historians point to religious beliefs, community conflict, fear,
+            economic instability and personal disputes. The Puritan Church reinforced the idea that the Devil
+            was constantly working to corrupt society, which created fear within the community.
+          </p>
+        </div>
+        <div class="st">
+          <span class="n">ii</span>
+          <h3>06 · Factor 2 of 5</h3>
+          <h4>The Role of the Church</h4>
+          <p>
+            Any unauthorised ritual other than official scripture was viewed by the Puritans as making a pact
+            with the Devil. The church held enormous power over what counted as acceptable belief, and over
+            who was seen as a threat.
+          </p>
+        </div>
+        <div class="st">
+          <span class="n">iii</span>
+          <h3>07 · Factor 3 of 5</h3>
+          <h4>Women & Gender</h4>
+          <p>
+            Women were targeted because of deeply rooted beliefs that they were more vulnerable to temptation
+            and more likely to be influenced by the devil. Women with healing knowledge were usually
+            tolerated, but a sudden illness or failed cure made people wonder if unseen forces were involved.
+          </p>
+        </div>
+        <div class="st">
+          <span class="n">iv</span>
+          <h3>08 · Factor 4 of 5</h3>
+          <h4>Poverty & Social Class</h4>
+          <p>
+            The first people accused were lower-class women: poor, widowed, unmarried or socially
+            marginalised. They had less power and protection within society, which made them easier targets.
+          </p>
+        </div>
+        <div class="st">
+          <span class="n">v</span>
+          <h3>09 · Factor 5 of 5</h3>
+          <h4>Community Conflict</h4>
+          <p>
+            Accusations rose from disputes over land, money, inheritance and neighbours, especially between
+            traditional farmers and wealthier merchants. Once a person was charged, their property could be
+            seized. Accusations became a weapon, and the trials soon broke gender boundaries as men were
+            accused and executed too.
+          </p>
+        </div>
+        <div class="dots"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 3 CARD — The Trials ===== -->
+
+    <section class="card" id="c3" data-ch="Chapter 3 of 4 · The Trials">
+      <small>Chapter 3 of 4</small>
+      <div class="h">The Trials</div>
+      <hr />
+    </section>
+
+    <!-- ===== 10 ACCUSATIONS & EXECUTIONS — stats + image gallery ===== -->
+    <section class="sec" data-ch="Chapter 3 of 4 · The Trials">
+      <div class="wrap">
+        <h3>10 · Accusations & executions</h3>
+        <h2 class="rv">Hysteria Spreads</h2>
+        <p class="rv d1">
+          Accusations moved from the three women to neighbours, family and respected members of the community.
+          Governor William Phips established the Court of Oyer and Terminer to accept spectral evidence: the
+          claim that an accused person's spirit had appeared to someone. The first execution took place on
+          June 10, 1692: Bridget Bishop.
+        </p>
+        <div class="stats">
+          <div class="stat rv"><b data-to="200" data-suf="+">0</b><span>people accused</span></div>
+          <div class="stat rv d1"><b data-to="19">0</b><span>executed by September</span></div>
+          <div class="stat rv d2">
+            <b data-to="5" data-suf="+">0</b><span>died in jail before they could attend trial</span>
+          </div>
+        </div>
+        <div class="gal">
+          <figure class="slot"><span class="ph">IMAGE SLOT · TRIALS 1</span></figure>
+          <figure class="slot"><span class="ph">IMAGE SLOT · TRIALS 2</span></figure>
+          <figure class="slot"><span class="ph">IMAGE SLOT · TRIALS 3</span></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 11 EUROPE TRIALS — stats + wide image slot ===== -->
+
+    <section class="sec" id="eu" data-ch="Chapter 3 of 4 · The Trials">
+      <div class="wrap">
+        <h3>11 · Europe trials</h3>
+        <h2 class="rv">Far Beyond Salem</h2>
+        <p class="rv d1">
+          Although they are called the 'Salem' Witch Trials, accusations spread into surrounding communities
+          and across Europe, including Germany, Poland, France and England.
+        </p>
+        <div class="stats">
+          <div class="stat rv">
+            <b data-to="40000" data-sep="1">0</b><span>to 60,000 people estimated executed in Europe</span>
+          </div>
+          <div class="stat rv d1">
+            <b data-to="80" data-suf="%">0</b><span>75–80% of those accused and executed were women</span>
+          </div>
+          <div class="stat rv d2"><b data-to="25" data-suf="%">0</b><span>20–25% were men</span></div>
+        </div>
+        <figure class="slot wide"><span class="ph">IMAGE SLOT · EUROPE</span></figure>
+      </div>
+    </section>
+
+    <!-- ===== 12-14 COMMON MISCONCEPTIONS — pinned scenes ===== -->
+
+    <section class="steps" id="mis" data-n="3" data-ch="Chapter 3 of 4 · The Trials" style="height: 400vh">
+      <div class="stage">
+        <div class="st">
+          <h3>12 · Common misconceptions</h3>
+          <div class="myth">
+            <s>"It was only about witchcraft."</s>
+            <p>
+              There is no single explanation. Land disputes, inheritance, social class and fear all played a
+              part, and accusations became an effective weapon against rivals.
+            </p>
+          </div>
+        </div>
+        <div class="st">
+          <h3>13 · Common misconceptions</h3>
+          <div class="myth">
+            <s>"It only happened in Salem."</s>
+            <p>
+              Accusations spread into surrounding communities and across Europe, where an estimated 40,000 to
+              60,000 people were executed.
+            </p>
+          </div>
+        </div>
+        <div class="st">
+          <h3>14 · Common misconceptions</h3>
+          <div class="myth">
+            <s>"Tituba really practised witchcraft."</s>
+            <p>
+              She never did. Her confession was forced through severe physical abuse by her owner, because she
+              feared being hanged.
+            </p>
+          </div>
+        </div>
+        <div class="dots"><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 4 CARD — The End ===== -->
+
+    <section class="card" id="c4" data-ch="Chapter 4 of 4 · The End">
+      <small>Chapter 4 of 4</small>
+      <div class="h">The End</div>
+      <hr />
+    </section>
+
+    <!-- ===== 15-16 THE END, AFTERMATH & LEGACY ===== -->
+    <section class="sec" data-ch="Chapter 4 of 4 · The End">
+      <div class="wrap">
+        <h3>15 · The trials come to an end</h3>
+        <h2 class="rv">Emerging</h2>
+        <p class="rv d1">
+          The trials took place between 1692 and 1693 and eventually ended, leaving Salem to deal with the
+          consequences. Some participants admitted their mistakes, and in 1697 the Massachusetts General Court
+          called for a day of fasting and repentance.
+        </p>
+        <h3 id="s16" class="rv d2" style="margin-top: 50px">16 · The aftermath & legacy</h3>
+        <p class="rv d3">
+          Compensation was later provided to some families. The trials remain a reminder of how fear, power
+          and prejudice can shape what a community believes, and how history is remembered.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 17 INTERACTIVE TIMELINE (edit events here) ===== -->
+
+    <section class="sec" id="tlw" data-ch="Recap · Timeline">
+      <div class="wrap">
+        <h3>17 · Interactive timeline</h3>
+        <h2>The Story at a Glance</h2>
+        <div id="tl">
+          <div id="tf"></div>
+          <div class="ev rv">
+            <b>Before 1692</b>
+            <h4>Tension builds</h4>
+            <p>Disputes over land, wealth and authority divide Salem Town and Salem Village.</p>
+          </div>
+          <div class="ev rv">
+            <b>Jan 1692</b>
+            <h4>The fits begin</h4>
+            <p>Betty Parris, 9, and Abigail Williams, 11, scream, throw things and twist their bodies.</p>
+          </div>
+          <div class="ev rv">
+            <b>Early 1692</b>
+            <h4>A doctor blames evil forces</h4>
+            <p>With no ordinary explanation, fear and suspicion spread through the community.</p>
+          </div>
+          <div class="ev rv">
+            <b>Feb 1692</b>
+            <h4>Three women named</h4>
+            <p>
+              Tituba, Sarah Good and Sarah Osborne are accused: an enslaved woman, a very poor woman and an
+              older woman with a bad reputation.
+            </p>
+          </div>
+          <div class="ev rv">
+            <b>Mar 1692</b>
+            <h4>Tituba confesses</h4>
+            <p>
+              Forced through severe abuse by Samuel Parris, she confesses and claims other witches work with
+              the Devil.
+            </p>
+          </div>
+          <div class="ev rv">
+            <b>Spring 1692</b>
+            <h4>Accusations spread</h4>
+            <p>
+              Neighbours, family members and respected people are accused, and the fear reaches other
+              communities.
+            </p>
+          </div>
+          <div class="ev rv">
+            <b>May 1692</b>
+            <h4>Court of Oyer and Terminer</h4>
+            <p>Governor William Phips establishes the court, which accepts spectral evidence.</p>
+          </div>
+          <div class="ev rv">
+            <b>Jun 10, 1692</b>
+            <h4>First execution</h4>
+            <p>Bridget Bishop is the first person executed.</p>
+          </div>
+          <div class="ev rv">
+            <b>Jun – Sep 1692</b>
+            <h4>The executions continue</h4>
+            <p>By September, 19 people are executed and more than 5 others die in jail before trial.</p>
+          </div>
+          <div class="ev rv">
+            <b>Sep 1692</b>
+            <h4>The last executions</h4>
+            <p>The hysteria reaches its peak; more than 200 people have now been accused, women and men.</p>
+          </div>
+          <div class="ev rv">
+            <b>Oct 1692</b>
+            <h4>The court is dissolved</h4>
+            <p>Doubts about spectral evidence grow and the trials begin to wind down.</p>
+          </div>
+          <div class="ev rv">
+            <b>1693</b>
+            <h4>The trials come to an end</h4>
+            <p>The accusations and trials that began in 1692 finally end.</p>
+          </div>
+          <div class="ev rv">
+            <b>Jan 1697</b>
+            <h4>Fasting and repentance</h4>
+            <p>
+              The Massachusetts General Court calls for a day of fasting and repentance; some participants
+              admit their mistakes.
+            </p>
+          </div>
+          <div class="ev rv">
+            <b>1711</b>
+            <h4>Compensation</h4>
+            <p>Later, compensation is provided to some families.</p>
+          </div>
+          <div class="ev rv">
+            <b>1957</b>
+            <h4>A formal apology</h4>
+            <p>Massachusetts formally apologises for the trials.</p>
+          </div>
+          <div class="ev rv">
+            <b>Across Europe</b>
+            <h4>The wider witch hunts</h4>
+            <p>
+              An estimated 40,000 to 60,000 people executed, 75–80% of those accused and executed were women.
+            </p>
+          </div>
+          <div class="ev rv">
+            <b>Today</b>
+            <h4>Legacy</h4>
+            <p>A reminder of how fear, power and prejudice shape belief, and how history is remembered.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 18 REFERENCES, CREDITS & BACK-TO-HERO BUTTON ===== -->
+    <footer id="src">
+      <h3>18 · Sources & credits</h3>
+      <h2 style="font-size: 50px">References</h2>
+      <p>
+        Barillari A (2001) Salem witch trials: Tituba, salem.lib.virginia.edu, accessed 31 August 2026.
+        https://salem.lib.virginia.edu/people/tituba.html
+      </p>
+      <p>
+        Blumberg J (2022) A brief history of the salem witch trials, Smithsonian Magazine, accessed 4
+        September 2026.
+      </p>
+      <p>Campbell O (2020) When wise women were witches, Medium, accessed 2 September 2026.</p>
+      <p>
+        Kayata E (2023) What really happened during the Salem witch trials? Experts debunk five common
+        misconceptions, Northeastern Global News, accessed 30 August 2026.
+      </p>
+      <p>
+        Norton MB (2026) In the devil's snare: The salem Witchcraft crisis of 1692, Smithsonian Institution,
+        accessed 4 September 2026.
+      </p>
+      <p>
+        Ring NA, McHugh NM, Reed BB, Davidson-Welch R & Dodd LS (2024) Healers and midwives accused of
+        witchcraft (1563–1736), Nurse Education Today, vol. 133, p. 106026, accessed 5 September 2026.
+      </p>
+      <p>Salem Witch Museum (2019) Foundation of Salem Village Parsonage, accessed 1 September 2026.</p>
+      <p>
+        Wheeler J (2023) Research guides: Salem witch trials: Accusers and accused, guides.bpl.org, accessed 3
+        September 2026.
+      </p>
+      <p>Wolfe H (2025) A spooky story of witches and herbs, Anabaptist World, accessed 2 September 2026.</p>
+      <p>Worthen H (2020) Early modern witch trials, The National Archives, accessed 1 September 2026.</p>
+      <button id="btt" type="button">BACK TO HERO ↑</button>
+      <p>Design & development: Alyssa Pramod · S4177012 · 2026</p>
+    </footer>
+
+    <!-- ===== JAVASCRIPT (all behaviour lives in main.js) ===== -->
+    <script src="main.js"></script>
+  </body>
 </html>
